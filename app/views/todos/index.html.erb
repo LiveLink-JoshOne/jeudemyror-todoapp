@@ -1,0 +1,20 @@
+<h3> Here are all of your To-Do items!
+
+<table border=1>
+  <tr>
+    <th> Name </th>
+    <th> Descripton </th>
+  </tr>
+  <% @todos.each do |todo| %> <!-- ## Iterate Todo items via var we defined in controller -->
+    <tr>
+      <td> <%= todo.id.to_s %> </td> <!-- ## Using var in pipes above -->
+      <td> <%= todo.name %> </td>
+      <td> <%= todo.description %> </td>
+      <td> <%= link_to 'Edit', edit_todo_path(todo) %> </td> <!-- ## Passing todo var as arg -->
+      <td> <%= link_to 'Show', todo_path(todo) %> </td>
+      <td> <%= link_to 'Delete', todo_path(todo), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<p> <%= link_to 'Create new To-Do item', new_todo_path %> <!-- ## Don't need to pass arg -->

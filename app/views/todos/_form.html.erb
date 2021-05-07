@@ -1,0 +1,22 @@
+<% if @todo.errors.any? %> <!-- ## i.e. if DB refused form entry -->
+  <h3> Your To-Do item could not be saved: </h3>
+  <ul>
+    <% @todo.errors.full_messages.each do |msg| %> <!-- ## Iterate through all errors assoc w/ todo var -->
+      <li> <%= msg %> </li> <!-- ## Using var in pipes above  -->
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @todo do |td| %>
+  <p>
+    <%= td.label       :name %>
+    <%= td.text_field  :name %>
+  </p>
+  <p>
+    <%= td.label     :description %>
+    <%= td.text_area :description %>
+  </p>
+   <p>
+    <%= td.submit %>
+  </p>
+<% end %>
