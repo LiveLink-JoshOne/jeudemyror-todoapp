@@ -1,9 +1,15 @@
-<h3> To-Do item: <%= @todo.id.to_s %> </h3>
-<p> Name: <%= @todo.name %> </p>
-<p> Description: <%= @todo.description %> </p>
+<div align="center">
 
-<p>
-  <%= link_to 'Edit this item', edit_todo_path(@todo) %> <!-- ## Var being passed by controller --> |
-  <%= link_to 'Delete this item', todo_path(@todo), method: :delete, data: {confirm: 'Are you sure?'} %> |
-  <%= link_to 'Back to To-Do list', todos_path %>
-</p>
+  <h3> To-Do item: <%= @todo.id.to_s %> </h3>
+
+  <div>
+    <p> Name: <%= @todo.name %> </p>
+    <p> Description: <%= @todo.description %> </p>
+  </div>
+
+  <p>
+    <%= link_to 'Edit this item', edit_todo_path(@todo) %> <!-- ## Var being passed by controller --> |
+    <%= link_to 'Delete this item', todo_path(@todo), method: :delete, data: {confirm: 'Are you sure?'} %> |
+    <%= link_to 'Back to To-Do list', todos_path %>
+  </p>
+</div>

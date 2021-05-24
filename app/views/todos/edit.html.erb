@@ -1,9 +1,18 @@
-<h3> Edit To-Do item: <%= @todo.id.to_s %>
+<div align="center">
 
-<%= render 'form' %> <!-- ## Partial is in same dir, no path reqd -->
+  <h3> Edit To-Do item: <%= @todo.id.to_s %>
 
-<p>
-  <%= link_to 'Back to To-Do item', todo_path(@todo) %> |
-  <%= link_to 'Delete this item', todo_path(@todo), method: :delete, data: {confirm: 'Are you sure?'} %> |
-  <%= link_to 'Back to To-Do list', todos_path %>
-</p>
+  <%= render 'form' %> <!-- ## Partial is in same dir, no path reqd -->
+
+  <p>
+    <%= link_to 'Back to To-Do item', todo_path(@todo) %>
+    | <%=
+      link_to 'Delete this item',
+      todo_path(@todo),
+      method: :delete,
+      data: {confirm: 'Are you sure?'}
+    %>
+    | <%= link_to 'Back to To-Do list', todos_path %>
+  </p>
+
+</div>
